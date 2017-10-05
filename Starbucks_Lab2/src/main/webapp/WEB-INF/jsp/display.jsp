@@ -10,27 +10,33 @@
 </head>
 <body>
 
-	<h2>
-		Starbuck's <u>${adviceInfo.adviceTitle}</u> Roast Coffees:
-	</h2>
+	<c:choose>
+		<c:when test="${error != null}">
+			<p id="errors">${error}</p>
+		</c:when>
+		<c:otherwise>
+			<h2>
+				Starbuck's <u>${adviceInfo.adviceTitle}</u> Roast Coffees:
+			</h2>
 
-	<table>
-		<c:forEach var="adv" items="${adviceInfo.adviceContent}"
-			varStatus="status">
+			<table>
+				<c:forEach var="adv" items="${adviceInfo.adviceContent}"
+					varStatus="status">
 
-			<c:choose>
-				<c:when test="${(status.index)%2 eq 0}">
-					<tr style="background-color: cyan">
-				</c:when>
-				<c:otherwise>
-					<tr style="background-color: yellow">
-				</c:otherwise>
-			</c:choose>
-			<td>${adv}</td>
-			</tr>
-		</c:forEach>
-	</table>
-
-	<a href="/SpringMaven/advice/list">Go Back</a>
+					<c:choose>
+						<c:when test="${(status.index)%2 eq 0}">
+							<tr style="background-color: cyan">
+						</c:when>
+						<c:otherwise>
+							<tr style="background-color: yellow">
+						</c:otherwise>
+					</c:choose>
+					<td>${adv}</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</c:otherwise>
+	</c:choose>
+	<a href="/StarbucksLab/advice/list">Go Back</a>
 </body>
 </html>
