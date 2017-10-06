@@ -23,7 +23,7 @@ public class CalculatorController {
 	@Autowired
 	private calculatorValidator calculatorValidator;
 	
-	@RequestMapping("/")
+	@RequestMapping
 	public String home() {
 		return "index";
 	}

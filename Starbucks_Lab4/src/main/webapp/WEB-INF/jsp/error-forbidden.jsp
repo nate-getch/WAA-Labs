@@ -18,7 +18,7 @@
  
 <H2>${requestScope['javax.servlet.error.message']}</H2>
  
- <form  action="Starbucks_Lab2">
+ <form  action="/Starbucks_Lab4">
 	<input type="submit" value="Back">
 </form>
 </center> 

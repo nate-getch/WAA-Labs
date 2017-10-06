@@ -12,7 +12,7 @@
 
 	<h2>Ask for advice about your favorite roast:</h2>
 	<p />
-	<form action="" method="get">
+	<form action="action/advice" method="get">
 		<select name="roast" disabled="disabled">
 			<option value="dark">Dark</option>
 			<option value="medium">Medium</option>
@@ -24,7 +24,6 @@
 	<p />
 
 	<form action="login" method="post">
-
 		<p>Login:</p>
 		<c:if test="${error != null}">
 			<p id="errors">Error: ${error}</p>

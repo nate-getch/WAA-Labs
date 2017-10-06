@@ -37,6 +37,6 @@
 			</table>
 		</c:otherwise>
 	</c:choose>
-	<a href="/Starbucks_Lab2/advice/list">Go Back</a>
+	<a href="/Starbucks_Lab4/advice/list">Go Back</a>
 </body>
 </html>
