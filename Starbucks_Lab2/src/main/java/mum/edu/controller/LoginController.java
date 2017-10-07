@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import mum.edu.domain.User;
 import mum.edu.service.UserService;
 
@@ -18,7 +20,7 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String processLogin(User user, Model model) {
 		User newUser = userService.authUser(user);
 		//System.out.println(user.getPassword());
