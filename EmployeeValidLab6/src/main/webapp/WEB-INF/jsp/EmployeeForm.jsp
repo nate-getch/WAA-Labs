@@ -3,31 +3,33 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div id="global">
-	<spring:message code="welcome.springmvc" />
-
+	
 	<form:form commandName="employee" action="employee_save" method="post"
 		enctype="multipart/form-data">
 		<fieldset>
-			<legend>Add an employee</legend>
+			<legend><spring:message code="addEmployee.form.addEmpLegend" /></legend>
 			<p>
 				<form:errors path="*" cssStyle="color : red;" />
 			</p>
 			<p>
-				<label for="id">ID: </label>
+				<label for="id"><spring:message code="addEmployee.form.id" />
+				</label>
 				<form:input path="id" id="id" />
 			<div style="text-align: center;">
 				<form:errors path="id" cssStyle="color : red;" />
 			</div>
 			</p>
 			<p>
-				<label for="firstName">First Name: </label>
+				<label for="firstName"><spring:message
+						code="addEmployee.form.firstName" /> </label>
 				<form:input path="firstName" />
 			<div style="text-align: center;">
 				<form:errors path="firstName" cssStyle="color : red;" />
 			</div>
 			</p>
 			<p>
-				<label for="lastName">Last Name: </label>
+				<label for="lastName"><spring:message
+						code="addEmployee.form.lastName" /> </label>
 				<form:input path="lastName" />
 			<div style="text-align: center;">
 				<form:errors path="lastName" cssStyle="color : red;" />
@@ -35,52 +37,60 @@
 			</p>
 
 			<p>
-				<label for="birthDate">Date Of Birth: </label>
+				<label for="birthDate"><spring:message
+						code="addEmployee.form.birthDate" /> </label>
 				<form:input path="birthDate" id="birthDate" />
 				<form:errors path="birthDate" cssStyle="color : red;" />
 			</p>
 			<p>
-				<label for="salaryLevel">Salary: </label>
+				<label for="salaryLevel"><spring:message
+						code="addEmployee.form.salaryLevel" /> </label>
 				<form:input path="salaryLevel" id="salaryLevel" />
 			<div style="text-align: center;">
 				<form:errors path="salaryLevel" cssStyle="color : red;" />
 			</div>
 			</p>
-			<h4>Address:</h4>
+			<h4><spring:message code="addEmployee.form.addressTitle" /></h4>
 			<p>
-				<label for="street">Street: </label>
+				<label for="street"><spring:message
+						code="addEmployee.form.street" /> </label>
 				<form:input path="address.street" id="street" />
 			<div style="text-align: center;">
 				<form:errors path="address.street" cssStyle="color : red;" />
 			</div>
 			</p>
 			<p>
-				<label for="state">State: </label>
+				<label for="state"><spring:message
+						code="addEmployee.form.state" /> </label>
 				<form:input path="address.state" id="state" />
 			<div style="text-align: center;">
 				<form:errors path="address.state" cssStyle="color : red; " />
 			</div>
 			</p>
 			<p>
-				<label for="zipCode">Zip: </label>
+				<label for="zipCode"><spring:message
+						code="addEmployee.form.zipCode" /> </label>
 				<form:input path="address.zipCode" id="zipCode" />
 			<div style="text-align: center;">
 				<form:errors path="address.zipCode" cssStyle="color : red; " />
 			</div>
 			</p>
-			
+
 			<div class="">
-				<label class="" for="userImage">
-				<spring:message
+				<label class="" for="userImage"> <spring:message
 						code="addEmployee.form.userImage.label" /></label>
 				<div class="">
 					<form:input id="userImage" path="userImage" type="file" />
 				</div>
 			</div>
-			
+
 			<p id="buttons">
-				<input id="reset" type="reset" tabindex="4"> <input
-					id="submit" type="submit" tabindex="5" value="Add Employee">
+				<button id="reset" type="reset" tabindex="4">
+					<spring:message code="addEmployee.form.reset" />
+				</button>
+				<button id="submit" type="submit" tabindex="5">
+					<spring:message code="addEmployee.form.submit" />
+				</button>
 			</p>
 		</fieldset>
 	</form:form>
