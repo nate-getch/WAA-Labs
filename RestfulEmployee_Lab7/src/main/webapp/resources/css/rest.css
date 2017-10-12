@@ -1,0 +1,40 @@
+Table.GridOne {
+	padding: 3px;
+	margin: 0;
+	background: lightyellow;
+	border-collapse: collapse;
+	width: 35%;
+}
+
+Table.GridOne Td {
+	padding: 2px;
+	border: 1px solid #ff9900;
+	border-collapse: collapse;
+}
+
+#errors {
+	position: absolute;
+	top: 300px;
+	left: 200px;
+	background-color: LightBlue;
+	width: 375px;
+	height: 175px;
+	z-index: 9002;
+	border-style: solid;
+	border-color: blue;
+}
+
+#errors, li {
+	color: FireBrick;
+}
+
+#formInput {
+	position: absolute;
+	top: 60px;
+	background-color: tan;
+	width: 300px;
+	height: 220px;
+	z-index: 9002;
+	border-style: solid;
+	border-color: brown;
+}

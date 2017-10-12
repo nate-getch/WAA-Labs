@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<context:component-scan base-package="mum.edu" />
+	<mvc:annotation-driven validator="validator" />
+	
+	<mvc:resources mapping="/resource/**" location="/resources/"/>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+        <property name="order" value="2" />
+	</bean>
+		
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>
+
+    	<bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+   		<property name="basenames" value="errorMessages,messages"/> 
+	</bean>
+	
+	<bean id="messageAccessor" class="org.springframework.context.support.MessageSourceAccessor">
+    	<constructor-arg  ref="messageSource"/>
+	</bean> 
+	
+</beans>
