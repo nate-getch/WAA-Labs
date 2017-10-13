@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class Employee  {
@@ -12,9 +13,11 @@ public class Employee  {
   	private String firstName;
 	
 	@NotEmpty
+	@Size(min = 3, max = 10)
  	private String lastName;
 	
 	@NotEmpty
+	@Email
  	private String email;
 
 	public String getFirstName() {

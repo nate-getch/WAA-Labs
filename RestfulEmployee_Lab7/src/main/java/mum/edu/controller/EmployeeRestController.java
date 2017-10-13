@@ -14,23 +14,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import mum.edu.domain.Employee;
+import mum.edu.service.EmployeeService;
 
 @RequestMapping("/api/employee")
 @Controller
 public class EmployeeRestController {
 	
-	List<Employee> emp;
-	EmployeeRestController(){
-		emp = new ArrayList<Employee>();
-	}
-	
-	//@Autowired
-	//EmployeeService employeeService;
+
+	@Autowired
+	EmployeeService employeeService;
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public @ResponseBody Employee addEmployee(@Valid @RequestBody Employee employee) {
-		//employeeService.save(employee);
-		emp.add(employee);
+		employeeService.save(employee);
 		return employee;
 	}
 	
