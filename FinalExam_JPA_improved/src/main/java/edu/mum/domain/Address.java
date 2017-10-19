@@ -1,6 +1,4 @@
-package com.packt.webstore.domain;
-
-import java.io.Serializable;
+package edu.mum.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,11 +8,11 @@ import javax.persistence.Id;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Address implements Serializable {
+public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 
 	@NotEmpty
 	private String street;
@@ -55,14 +53,6 @@ public class Address implements Serializable {
 
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }

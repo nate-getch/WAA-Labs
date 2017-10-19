@@ -1,4 +1,4 @@
-package com.packt.webstore.controller;
+package edu.mum.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.packt.webstore.domain.Employee;
-import com.packt.webstore.domain.Address;
-import com.packt.webstore.service.AddressService;
-import com.packt.webstore.service.EmployeeService;
+import edu.mum.domain.Employee;
+import edu.mum.domain.Address;
+import edu.mum.service.AddressService;
+import edu.mum.service.EmployeeService;
 
 @Controller
 @RequestMapping({ "/employees" })

@@ -1,6 +1,4 @@
-package com.packt.webstore.domain;
-
-import java.io.Serializable;
+package edu.mum.domain;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -17,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Employee implements Serializable {
+public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,7 +32,7 @@ public class Employee implements Serializable {
 	@NotNull
 	private int employeeNumber;
 
-	//@Valid
+	@Valid
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "address_id")
 	private Address address;

@@ -13,10 +13,10 @@
 		<div class="jumbotron">
 			<div class="container">
 				<img src="<spring:url value='/resource/images/kemosabes.jpg' />" />
-				<h1>Our People</h1>
+				<h1>Our Employees</h1>
 				<p>All of the contributors to our Community!!!</p>
 			</div>
-						<a href="<c:url value="/employees/add" />" class="btn btn-danger btn-mini pull-right">Add a new one</a>	
+			<a href="<c:url value="/employees/add" />" class="btn btn-danger btn-mini pull-right">Add a new one</a>	
  			
 		</div>
 	</section>
@@ -33,11 +33,10 @@
 							<p>Title -       ${employee.title} </p>
 							<p>NUMBER -      ${employee.employeeNumber} </p>
 							<p>
-								<!--a
-									href=" <spring:url value="/products/product?id=${product.productId}" /> "
+								<a	href=" <spring:url value="/employees/employee?id=${employee.id}" /> "
 									class="btn btn-primary"> <span
 									class="glyphicon-info-sign glyphicon" /></span> Details
-								</a-->
+								</a>
 							</p>
 
 						</div>
