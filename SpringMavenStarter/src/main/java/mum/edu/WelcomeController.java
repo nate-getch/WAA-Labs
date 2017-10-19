@@ -24,5 +24,11 @@ public class WelcomeController {
 	public String ExceptionTwo() {
 		throw new CustomHandlerException("my Custom @ExceptionHandler");
 	}
+	
+	@RequestMapping("/test")
+	public String testInterceptor() {
+		
+		return "index";
+	}
 
 }

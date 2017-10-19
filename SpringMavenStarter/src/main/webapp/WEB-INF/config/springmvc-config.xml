@@ -10,7 +10,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
         
-        
 	<context:component-scan base-package="mum.edu" />
 	<mvc:annotation-driven />
 	
@@ -23,5 +22,12 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<mvc:interceptors>
+		<mvc:interceptor>
+		<mvc:mapping path="/test/**"/>
+		<bean class="mum.edu.VolunteerInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 	
 </beans>
