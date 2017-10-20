@@ -34,9 +34,18 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/employee")
-	public String getEmployeeByNumber(Model model, @RequestParam("id") int employeeId) {
-
-		Employee employee = employeeService.findOne((Long.valueOf(employeeId)));
+	public String getEmployeeByNumber(Model model, @RequestParam("id") String employeeId) {
+		
+		Employee employee = null;
+		try {
+			Long empId = Long.valueOf(employeeId);
+			if( empId instanceof Long ) {
+				employee = employeeService.findOne(empId);
+			}
+		}
+		catch(NumberFormatException e) {
+			System.out.println(e);
+		}
 
 		model.addAttribute("employee", employee);
 		return "employee";

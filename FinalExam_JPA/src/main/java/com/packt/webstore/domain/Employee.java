@@ -21,7 +21,7 @@ public class Employee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private Long id;
 
 	@NotEmpty
 	private String firstName;
@@ -39,11 +39,11 @@ public class Employee implements Serializable {
 	@JoinColumn(name = "address_id")
 	private Address address;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -93,6 +93,11 @@ public class Employee implements Serializable {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 }
