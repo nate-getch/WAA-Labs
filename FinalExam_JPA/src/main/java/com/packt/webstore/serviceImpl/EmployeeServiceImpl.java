@@ -17,8 +17,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
 
-	@Autowired
-	AddressRepository addressRepository;
+	//@Autowired
+	//AddressRepository addressRepository;
 
 	public void save(Employee emp) {
 		employeeRepository.save(emp);
